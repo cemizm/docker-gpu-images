@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-cudnn7-devel as base
+FROM nvidia/cuda:10.0-cudnn7-devel
 
 ARG PYTHON=python3
 ARG PIP=pip3
@@ -23,3 +23,7 @@ RUN ln -s $(which ${PIP}) /usr/local/bin/pip
 RUN pip --no-cache-dir install --upgrade \
     pip \
     setuptools
+
+ENV PYTHONPATH='/src/:$PYTHONPATH'
+
+WORKDIR /src
