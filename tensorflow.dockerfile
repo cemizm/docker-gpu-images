@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=cemizm/cuda-scipy
+ARG BASE_IMAGE=cemizm/sci-gpu:scipy
 
 FROM $BASE_IMAGE
 
