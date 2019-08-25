@@ -2,6 +2,21 @@ ARG BASE_IMAGE=cemizm/sci-gpu:base
 
 FROM $BASE_IMAGE
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      python3 \
+      python3-pip && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN ln -s $(which python3) /usr/local/bin/python 
+RUN ln -s $(which pip3) /usr/local/bin/pip 
+
+RUN pip --no-cache-dir install --upgrade \
+    pip \
+    setuptools
+
+ENV PYTHONPATH='/src/:$PYTHONPATH'
+ENV PYTHONUNBUFFERED 1
+
 RUN pip install \
     'numpy >= 1.13.3, <= 1.14.5' \
     'beautifulsoup4>=4.8.0,<4.9.0' \
