@@ -12,5 +12,9 @@ scipy: base
 tensorflow: scipy
 	docker build -t $(image):tensorflow --build-arg BASE_IMAGE=$(image):scipy -f tensorflow.dockerfile .
 
+.PHONY: pytorch
+pytorch: scipy
+	docker build -t $(image):pytorch --build-arg BASE_IMAGE=$(image):scipy -f pytorch.dockerfile .
+
 PHONY: all
-all: base scipy tensorflow
+all: base scipy tensorflow pytorch

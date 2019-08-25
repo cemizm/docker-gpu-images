@@ -67,3 +67,17 @@ docker pull cemizm/sci-gpu:tensorflow
 
 - Everything from scipy image
 - [tensorflow-gpu](https://www.tensorflow.org/install/gpu), [keras](https://keras.io/)
+
+## PyTorch
+Adds pytorch with gpu support to the image.
+
+[Dockerfile](https://github.com/cemizm/docker-gpu-images/blob/master/pytorch.dockerfile)
+
+```
+docker pull cemizm/sci-gpu:pytorch
+```
+
+### Packages
+
+- Everything from scipy image
+- [pytorch](https://pytorch.org/)
