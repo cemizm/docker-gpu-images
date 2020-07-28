@@ -16,5 +16,9 @@ tensorflow: scipy
 pytorch: scipy
 	docker build -t $(image):pytorch --build-arg BASE_IMAGE=$(image):scipy -f pytorch.dockerfile .
 
+.PHONY: jupyter-tensorflow
+jupyter-tensorflow: tensorflow
+	docker build -t $(image):jupyter-tensorflow --build-arg BASE_IMAGE=$(image):tensorflow -f jupyter-tensorflow.dockerfile .
+
 PHONY: all
-all: base scipy tensorflow pytorch
+all: base scipy tensorflow pytorch jupyter-tensorflow

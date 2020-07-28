@@ -81,3 +81,17 @@ docker pull cemizm/sci-gpu:pytorch
 
 - Everything from scipy image
 - [pytorch](https://pytorch.org/)
+
+## Jupyter Lab with tensorflow
+Adds jupyter lab to the tensorflow image
+
+[Dockerfile](https://github.com/cemizm/docker-gpu-images/blob/master/jupyter-tensorflow.dockerfile)
+
+```
+docker pull cemizm/sci-gpu:jupyter-tensorflow
+```
+
+### Packages
+
+- Everything from tensorflow image
+- [jupyter-lab](https://jupyterlab.readthedocs.io/en/stable/)
