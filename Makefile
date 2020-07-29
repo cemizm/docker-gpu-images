@@ -22,3 +22,7 @@ jupyter-tensorflow: tensorflow
 
 PHONY: all
 all: base scipy tensorflow pytorch jupyter-tensorflow
+
+.PHONY: publish
+publish: all
+	docker push $(image)
